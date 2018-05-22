@@ -12,6 +12,6 @@ export const AppConfig: IAppConfig = {
   endpoints: {
     items: 'https://api.bonusway.com/campaigns?limit=2&offset=0'
   },
-  topItemsLimit: 4,
+  topItemsLimit: 10,
   repositoryURL: 'https://api.bonusway.com/campaigns?limit=2&offset=0'
 };

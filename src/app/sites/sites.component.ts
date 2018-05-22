@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SiteServiceService } from './shared/site-service.service';
-import {Item} from './shared/item';
 
 @Component({
   selector: 'app-sites',
@@ -8,15 +7,11 @@ import {Item} from './shared/item';
   styleUrls: ['./sites.component.css']
 })
 export class SitesComponent implements OnInit {
-  items: Item[];
+  items = [];
   constructor(private siteService: SiteServiceService) { }
 
   ngOnInit() {
-    this.siteService.getItems().subscribe((items: Array<Item>) => {
-       this.items = items;
-
-       console.log('sdsdsd ' + this.items);
-
-    });
+    this.siteService.getItems()
+      .subscribe(data => this.items = data.items);
   }
 }
