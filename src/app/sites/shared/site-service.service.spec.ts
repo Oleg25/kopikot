@@ -4,7 +4,7 @@ import {APP_CONFIG, AppConfig} from '../../config/app.config';
 
 import {SiteServiceService} from './site-service.service';
 
-describe('HeroService', () => {
+describe('SiteService', () => {
   let siteService;
 
   beforeEach(() => {
@@ -18,7 +18,7 @@ describe('HeroService', () => {
     siteService = TestBed.get(SiteServiceService);
   });
 
-  it('should contains heroes', async(() => {
+  it('should contains sites', async(() => {
     siteService.getItems().subscribe((data: any) => {
       expect(data.length).toBeGreaterThan(AppConfig.topItemsLimit);
     });
