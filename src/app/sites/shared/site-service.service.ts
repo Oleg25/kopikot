@@ -27,13 +27,11 @@ export class SiteServiceService {
   }
 
   getItems(limit: number, offset: number): Observable<any> {
-
     const params = new HttpParams().set('limit', String(limit));
     const httpOptions = {
       headers: new HttpHeaders({ 'Content-Type':  'application/json', 'accept-language': 'ru' }),
       params: params.append('offset', String(offset))
     };
-
     return this.http.get<Item[]>(this.itemsUrl, httpOptions)
       .pipe(
         map(res => <Item[]> res),
