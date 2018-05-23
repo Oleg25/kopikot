@@ -1,5 +1,6 @@
 <p>
     <li *ngFor="let item of items">
-      <img src="{{item.image.url}}" /><span style="color:blue;">{{item.title}}</span>
+      <a href="#" target="_blank"><img src="{{item.image.url}}" /><span style="color:blue;">{{item.title}}</span></a>
     </li>
+    <button (click)="loadMoreItems()">Load more</button>
 </p>

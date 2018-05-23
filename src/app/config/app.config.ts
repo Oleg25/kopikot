@@ -6,12 +6,11 @@ export let APP_CONFIG = new InjectionToken('app.config');
 
 export const AppConfig: IAppConfig = {
   routes: {
-    items: 'items',
-    error404: '404'
+    items: 'items'
   },
   endpoints: {
-    items: 'https://api.bonusway.com/campaigns?limit=2&offset=0'
+    items: 'https://api.bonusway.com/campaigns'
   },
   topItemsLimit: 10,
-  repositoryURL: 'https://api.bonusway.com/campaigns?limit=2&offset=0'
+  repositoryURL: 'https://api.bonusway.com/campaigns'
 };

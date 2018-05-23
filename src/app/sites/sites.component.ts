@@ -11,7 +11,11 @@ export class SitesComponent implements OnInit {
   constructor(private siteService: SiteServiceService) { }
 
   ngOnInit() {
-    this.siteService.getItems()
+    this.siteService.getItems(2, 0)
       .subscribe(data => this.items = data.items);
+  }
+
+  loadMoreItems () {
+    console.info('efdf');
   }
 }
