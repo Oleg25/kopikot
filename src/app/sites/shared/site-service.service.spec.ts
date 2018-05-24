@@ -20,7 +20,7 @@ describe('SiteService', () => {
 
   it('should contains sites', async(() => {
     siteService.getItems().subscribe((data: any) => {
-      expect(data.length).toBeGreaterThan(AppConfig.topItemsLimit);
+      expect(data.length).toBeGreaterThan(9);
     });
   }));
 });

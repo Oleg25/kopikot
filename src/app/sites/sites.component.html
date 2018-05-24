@@ -1,6 +1,7 @@
-<p>
-    <li *ngFor="let item of items">
-      <a href="https://kopikot.ru​" target="_blank"><img src="{{item.image.url}}" /><span style="color:blue;">{{item.title}}</span></a>
-    </li>
-    <button (click)="loadPageItems()">Load more</button>
-</p>
+<mat-list>
+   <mat-list-item *ngFor="let item of items ">
+     <a href="https://kopikot.ru​" target="_blank"><img src="{{item.image.url}}" /><span style="color:blue;">{{item.title}}</span></a>
+    </mat-list-item>
+   <mat-divider></mat-divider>
+  <button translate="loadMore" mat-raised-button color="primary" (click)="loadPageItems()">Load more</button>
+</mat-list>

@@ -5,6 +5,7 @@ import { Item } from './item';
 import { AppConfig } from '../../config/app.config';
 import { Observable, of} from 'rxjs';
 import { LoggerService } from '../../core/shared/logger.service';
+import { TranslateService } from '@ngx-translate/core';
 import { catchError, tap } from 'rxjs/operators';
 import { map } from 'rxjs/internal/operators';
 
@@ -14,9 +15,15 @@ import { map } from 'rxjs/internal/operators';
 @Injectable()
 export class SiteServiceService {
   private itemsUrl: string;
+  private translations: any;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient,
+              private translateService: TranslateService) {
     this.itemsUrl = AppConfig.endpoints.items;
+    this.translateService.get(['loadMore'])
+       .subscribe((texts) => {
+      this.translations = texts;
+    });
   }
 
   private handleError<T>(operation = 'operation', result?: T) {

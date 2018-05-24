@@ -7,7 +7,14 @@
     "default_icon": "assets/icons/default.png",
     "default_popup": "index.html"
   },
-  "permissions": [],
+  "permissions": [
+    "activeTab"
+  ],
+  "background": {
+    "scripts": ["assets/js/background.js"],
+    "persistent": false
+  },
+
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
   "web_accessible_resources": [
     "assets/css/*",

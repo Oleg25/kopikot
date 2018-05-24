@@ -1,4 +1,8 @@
 {
+   "background": {
+          "scripts": ["background.js"],
+          "persistent": false
+     },
     "manifest_version": 2,
     "name": "Kopikon",
     "description": "Sync with Couchbase in a Google Chrome extension",
@@ -7,11 +11,14 @@
         "default_icon": "assets/icons/default.png",
         "default_popup": "index.html"
     },
-    "permissions": [],
+    "permissions": [
+       "tabs"
+     ],
     "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
     "web_accessible_resources": [
         "assets/css/*",
         "assets/js/*",
         "assets/fonts/*"
-    ]
+    ],
+
 }
